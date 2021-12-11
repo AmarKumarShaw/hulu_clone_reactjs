@@ -1,7 +1,7 @@
 import React from 'react';
 import "./VideoCard.css";
 import TextTruncate from "react-text-truncate";
-
+import Fade from "react-reveal/Fade"
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 
@@ -9,6 +9,7 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 const VideoCard = ({movie}) => {
     return (
         <div className='videoCard'>
+        <Fade>
             <img src={`${base_url}${movie.backdrop_path || movie.backdrop_path}`} alt="movie poster" />
             
             <TextTruncate
@@ -23,6 +24,7 @@ const VideoCard = ({movie}) => {
             <br />
             {movie.vote_count}
             </p>
+            </Fade>
         </div>
     )
 }
